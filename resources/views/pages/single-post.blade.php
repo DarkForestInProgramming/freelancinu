@@ -7,17 +7,18 @@
         <!-- Kairė pusė - vartotojo informacija -->
         <div class="w-full sm:w-1/6 p-6 text-center">
     
-            <div class="flex items-center justify-center w-24 h-24 rounded-full bg-gray-300 mb-4 mx-auto">
-                <img src="https://gravatar.com/avatar/f64fc44c03a8a7eb1d52502950879659?s=128" alt="{{$post->user->username}}" class="w-20 h-20 rounded-full">
+            <div class="flex items-center justify-center w-24 h-24 rounded-full shadow-md mb-4 mx-auto">
+                <img src="{{$post->user->avatar}}" alt="{{$post->user->username}}" class="w-20 h-20 rounded-full">
             </div>
+
             <h1 class="text-2xl font-bold mb-2">{{$post->user->username}}</h1>
-            <button class="bg-laravel/80 text-center text-white font-thin py-1 px-8 mb-2 rounded">Narys</button>
+            <button class="bg-laravel/80 text-center text-white font-thin py-1 px-8 mb-2 rounded">{{$post->user->role}}</button>
             <div class="flex items-center justify-center text-gray-500 text-sm">
                 <span>Prisijungė: {{$post->user->created_at->format('Y-m-d')}}</span>
             </div>
-            <div class="mt-6">
-                <button href="#" class="text-blue-500 hover:underline">
-                    <i class="fa-solid fa-user-plus"></i> Sekti</button>
+
+            <div class="flex justify-center mt-3">
+                <button href="#" class="text-gray-200 block rounded-lg text-center font-medium leading-6 px-3 py-1 bg-gray-900 hover:bg-black hover:text-white"><i class="fa-solid fa-user-plus fa-sm"></i> Sekti</button>
             </div>
             
         </div>
@@ -29,26 +30,19 @@
             <p class="text-lg mb-6">
                 {!! $post->body !!}
             </p>
-            <div class="flex justify-between items-center mb-4">
-                <div class="text-gray-500 text-sm">
-                    <span>Paspaudimų skaičius: 0</span>
-                    <span class="mx-2">•</span>
-                    <span>Atsakymų skaičius: 0</span>
-                </div>
+            <div class="flex justify-end items-center mb-4">
                 @can('update', $post)
                 <div>
                     <form action="/post/{{$post->id}}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <a href="/post/{{$post->id}}/edit" title="Įrašo redagavimas" class="text-blue-500 hover:text-blue-600 mr-2"><i class="fa-solid fa-pen-to-square fa-xl"></i></a>
-                    <button type="submit" title="Įrašo trinimas" class="text-laravel hover:text-red-600"><i class="fa-solid fa-xmark fa-xl"></i></button>
+                        <a href="/post/{{$post->id}}/edit" title="Įrašo redagavimas" class="text-blue-500 hover:text-blue-600 mr-2"><i class="fa-solid fa-pen-to-square fa-lg"></i></a>
+                    <button type="submit" title="Įrašo trinimas" class="text-laravel hover:text-red-600"><i class="fa-solid fa-xmark fa-lg"></i></button>
                 </form>
                 </div>
                 @endcan
             </div>
-            <div>
-                <a href="#" class="text-gray-500 hover:underline">Žymės: #parduoda #kompas #parduodutel</a>
-            </div>
+            
         </div>
         
     </div>

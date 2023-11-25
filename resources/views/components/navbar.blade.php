@@ -11,7 +11,7 @@
             <i class="fas fa-comment"></i>
         </a>
             <a href="/profile/{{auth()->user()->username}}">
-                <img title="Mano Paskyra" data-toggle="tooltip" data-placement="bottom" style="width: 32px; height: 32px; border-radius: 50%;" src="https://gravatar.com/avatar/f64fc44c03a8a7eb1d52502950879659?s=128" />
+                <img title="Mano Paskyra" data-toggle="tooltip" data-placement="bottom" style="width: 32px; height: 32px; border-radius: 50%;" src="{{auth()->user()->avatar}}" />
             </a>
             <a class="hover:text-laravel" title="Įrašo kūrimas" href="/create-post">
                 <i class="fa-sharp fa-solid fa-pen"></i> 

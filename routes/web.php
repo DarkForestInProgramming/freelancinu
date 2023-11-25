@@ -48,4 +48,6 @@ Route::put('/post/{post}', [PostController::class, 'updatePost'])->middleware('c
 // Profile related routes
 
 Route::get('/profile/{user:username}', [ProfileController::class, 'profilePage']);
+Route::get('/change-avatar', [ProfileController::class, 'avatarPage'])->middleware('auth');
+Route::post('/change-avatar', [ProfileController::class, 'changeAvatar'])->middleware('auth');
 
