@@ -41,6 +41,7 @@ Route::get('/create-post', [PostController::class, 'createPostPage'])->middlewar
 Route::get('/post/{post}', [PostController::class, 'singlePostPage']);
 
 Route::post('/create-post', [PostController::class, 'storeNewPost'])->middleware('auth');
+Route::delete('/post/{post}', [PostController::class, 'deletePost'])->middleware('can:delete,post');
 
 // Profile related routes
 

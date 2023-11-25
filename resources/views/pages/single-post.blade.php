@@ -35,9 +35,16 @@
                     <span class="mx-2">•</span>
                     <span>Atsakymų skaičius: 0</span>
                 </div>
+                @can('update', $post)
                 <div>
-                    <button class="bg-blue-500 text-white px-3 md:px-5 py-2 md:py-3 rounded-md text-sm hover:bg-blue-600">Atsakyti</button>
+                    <form action="/post/{{$post->id}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                    <button type="submit" title="Įrašo trinimas" class="text-laravel hover:text-red-600"><i class="fa-solid fa-xmark fa-xl"></i></button>
+                </form>
+                {{-- <button type="submit" title="Įrašo redagavimas" class="text-blue-500 hover:text-blue-600 mr-2"><i class="fa-solid fa-pen-to-square fa-xl"></i></button> --}}
                 </div>
+                @endcan
             </div>
             <div>
                 <a href="#" class="text-gray-500 hover:underline">Žymės: #parduoda #kompas #parduodutel</a>

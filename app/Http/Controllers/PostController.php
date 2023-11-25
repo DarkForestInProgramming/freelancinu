@@ -16,8 +16,6 @@ class PostController extends Controller
         return view('pages.create-post', ['categories' => $categories]);
     }
 
-    
-
     public function storeNewPost(CreatePostRequest $request)
     {
         {
@@ -46,5 +44,10 @@ class PostController extends Controller
     public function singlePostPage(Post $post) {
         $post['body'] = strip_tags(Str::markdown($post->body), '<p><ul><ol><li><strong><em><h3><br>');
         return view('pages.single-post', ['post' => $post]);
+    }
+
+    public function deletePost(Post $post) {
+        $post->delete();
+        return redirect('/profile/' . auth()->user()->username)->with('success', 'Įrašas sėkmingai pašalintas.');
     }
 }
