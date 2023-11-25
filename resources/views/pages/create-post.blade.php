@@ -52,9 +52,10 @@
             @enderror
         </div>
 
-        <div class="mb-4">
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Sukurti įrašą</button>
+        <div>
+            <button type="submit" class="w-full bg-laravel text-white px-4 py-2 rounded-md hover:bg-red-600">Sukurti įrašą</button>
         </div>
+        <x-divider />
         <div class="max-w-md mx-auto bg-green-100 border-l-4 border-green-500 text-green-700 px-4 py-3 rounded-md mb-4">
             <p><strong>Informacija:</strong> Kurdami įrašą būkite budrūs ir susipažinkite su forumo taisyklėmis, kadangi keliant kenksmingus įrašus autoriaus paskyra bus <span class="underline">negrįžtamai</span> ištrinama.</p>
         </div>

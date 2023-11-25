@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\PageController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,23 +16,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//@desc Show page related routes
+//@desc Unlerated routes
 
-Route::get('/', [PageController::class, 'homePage']);
-Route::get('/register', [PageController::class, 'registerPage']);
-Route::get('/login', [PageController::class, 'loginPage']);
-Route::get('/create-post', [PageController::class, 'createPostPage']);
-Route::get('/post/{post}', [PageController::class, 'singlePostPage']);
-Route::get('/get-subcategories/{category}', [PageController::class, 'getSubcategories']);
-Route::get('/get-subsubcategories/{subcategory}', [PageController::class, 'getSubsubcategories']);
+Route::get('/', [AuthController::class, 'homePage'])->name('home');
 
+// @desc Category related routes
+
+Route::get('/get-subcategories/{category}', [CategoryController::class, 'getSubcategories']);
+Route::get('/get-subsubcategories/{subcategory}', [CategoryController::class, 'getSubsubcategories']);
 
 //@desc Auth related routes
+
+Route::get('/register', [AuthController::class, 'registerPage']);
+Route::get('/login', [AuthController::class, 'loginPage']);
 
 Route::post('/register', [AuthController::class, 'registerForm']);
 Route::post('/login', [AuthController::class, 'loginForm']);
 Route::post('/logout', [AuthController::class, 'logoutForm']);
 
 // Post related routes
+
+Route::get('/create-post', [PostController::class, 'createPostPage']);
+Route::get('/post/{post}', [PostController::class, 'singlePostPage']);
 
 Route::post('/create-post', [PostController::class, 'storeNewPost']);

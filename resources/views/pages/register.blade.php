@@ -42,7 +42,8 @@
                 <button type="submit" class="w-full bg-laravel text-white py-3 rounded-md hover:bg-red-600 transition duration-300">Registruotis</button>
             </div>
         </form>
-        <div class="max-w-md mx-auto bg-green-100 border-l-4 border-green-500 text-green-700 px-4 py-3 rounded-md mt-4 mb-4">
+        <x-divider />
+        <div class="max-w-md mx-auto bg-green-100 border-l-4 border-green-500 text-green-700 px-4 py-3 rounded-md mb-4">
             <p><strong>Informacija:</strong> Slaptažodį turi sudaryti nemažiau 8 elementų, tarp jų privalo būti didžioji raidė, skaičius ir simbolis.</p>
         </div>
         <p class="mt-4 text-center text-sm text-gray-600">Jau turite paskyrą? <a href="/login" class="text-blue-500 hover:underline">Prisijunkite čia</a></p>

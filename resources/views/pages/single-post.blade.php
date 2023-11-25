@@ -13,7 +13,7 @@
             <h1 class="text-2xl font-bold mb-2">{{$post->user->username}}</h1>
             <button class="bg-laravel/80 text-center text-white font-thin py-1 px-8 mb-2 rounded">Narys</button>
             <div class="flex items-center justify-center text-gray-500 text-sm">
-                <span>Prisijungė: 2023-11-23</span>
+                <span>Prisijungė: {{$post->user->created_at->format('Y-m-d')}}</span>
             </div>
             <div class="mt-6">
                 <button href="#" class="text-blue-500 hover:underline">
@@ -27,7 +27,7 @@
             <h2 class="text-2xl font-bold mb-2">{{$post->title}}</h2>
             <p class="text-sm text-gray-500 mb-2">Paskelbta: {{$post->created_at->format('Y-m-d')}}</p>
             <p class="text-lg mb-6">
-                {{$post->body}}
+                {!! $post->body !!}
             </p>
             <div class="flex justify-between items-center mb-4">
                 <div class="text-gray-500 text-sm">

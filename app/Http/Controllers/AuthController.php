@@ -9,6 +9,14 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
+    public function homePage() {
+        return view('pages.home');
+    }
+
+    public function registerPage() {
+        return view('pages.register');
+    }
+
     public function registerForm(RegistrationRequest $req) {
         $incomingFields = $req->validated();
         $incomingFields['password'] = bcrypt($incomingFields['password']);
@@ -16,6 +24,10 @@ class AuthController extends Controller
         $user = User::create($incomingFields);
         auth()->login($user);
         return redirect('/')->with('success', 'Sveikiname tapus mūsų nariu!');
+    }
+
+    public function loginPage() {
+        return view('pages.login');
     }
 
     public function loginForm(LoginRequest $req) {
