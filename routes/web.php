@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,3 +41,8 @@ Route::get('/create-post', [PostController::class, 'createPostPage'])->middlewar
 Route::get('/post/{post}', [PostController::class, 'singlePostPage']);
 
 Route::post('/create-post', [PostController::class, 'storeNewPost'])->middleware('auth');
+
+// Profile related routes
+
+Route::get('/profile/{user:username}', [ProfileController::class, 'profilePage']);
+

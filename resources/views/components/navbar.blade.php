@@ -1,6 +1,6 @@
 <nav class="flex justify-between items-center w-full mb-4">
     <a href="/">
-        <img class="w-24" src="logo.png" alt="Freelancinu logo" />
+        <img class="w-24" src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1700909453/Freelancinu/freelancinu_logo.png" alt="Freelancinu logo" />
     </a>
     <ul class="flex space-x-6 mr-6 text-lg">
         @auth
@@ -10,7 +10,7 @@
         <a href="#" class="text-black header-chat-icon" title="Pokalbis" data-toggle="tooltip" data-placement="bottom">
             <i class="fas fa-comment"></i>
         </a>
-            <a href="#">
+            <a href="/profile/{{auth()->user()->username}}">
                 <img title="Mano Paskyra" data-toggle="tooltip" data-placement="bottom" style="width: 32px; height: 32px; border-radius: 50%;" src="https://gravatar.com/avatar/f64fc44c03a8a7eb1d52502950879659?s=128" />
             </a>
             <a class="hover:text-laravel" title="Įrašo kūrimas" href="/create-post">
