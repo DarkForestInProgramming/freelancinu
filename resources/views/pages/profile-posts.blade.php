@@ -9,7 +9,7 @@
             </div>
             
             <div class="mt-16">
-                <h1 class="font-bold text-center text-3xl text-gray-900">Vardas</h1>
+                <h1 class="font-bold text-center text-3xl text-gray-900">{{$username}}</h1>
                 <p class="text-center text-sm text-gray-400 font-medium">Narys</p>
                 <p>
                     <span>

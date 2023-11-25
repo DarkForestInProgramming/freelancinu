@@ -40,9 +40,9 @@
                     <form action="/post/{{$post->id}}" method="POST">
                         @csrf
                         @method('DELETE')
+                        <a href="/post/{{$post->id}}/edit" title="Įrašo redagavimas" class="text-blue-500 hover:text-blue-600 mr-2"><i class="fa-solid fa-pen-to-square fa-xl"></i></a>
                     <button type="submit" title="Įrašo trinimas" class="text-laravel hover:text-red-600"><i class="fa-solid fa-xmark fa-xl"></i></button>
                 </form>
-                {{-- <button type="submit" title="Įrašo redagavimas" class="text-blue-500 hover:text-blue-600 mr-2"><i class="fa-solid fa-pen-to-square fa-xl"></i></button> --}}
                 </div>
                 @endcan
             </div>

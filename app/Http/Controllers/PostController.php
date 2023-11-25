@@ -10,7 +10,6 @@ use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
-
     public function createPostPage() {
         $categories = Category::all();
         return view('pages.create-post', ['categories' => $categories]);
@@ -49,5 +48,21 @@ class PostController extends Controller
     public function deletePost(Post $post) {
         $post->delete();
         return redirect('/profile/' . auth()->user()->username)->with('success', 'Įrašas sėkmingai pašalintas.');
+    }
+
+    public function editPostPage(Post $post) {
+        $categories = Category::all();
+        return view('pages.edit-post', ['post' => $post, 'categories' => $categories]);
+    }
+
+    public function updatePost(Post $post, CreatePostRequest $request) {
+
+        $incomingFields = $request->validated();
+        $incomingFields['title'] = strip_tags($incomingFields['title']);
+        $incomingFields['body'] = strip_tags($incomingFields['body']);
+
+        $post->update($incomingFields);
+
+        return back()->with('success', 'Įrašas sėkmingai atnaujintas');
     }
 }

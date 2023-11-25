@@ -42,6 +42,8 @@ Route::get('/post/{post}', [PostController::class, 'singlePostPage']);
 
 Route::post('/create-post', [PostController::class, 'storeNewPost'])->middleware('auth');
 Route::delete('/post/{post}', [PostController::class, 'deletePost'])->middleware('can:delete,post');
+Route::get('/post/{post}/edit', [PostController::class, 'editPostPage'])->middleware('can:update,post');
+Route::put('/post/{post}', [PostController::class, 'updatePost'])->middleware('can:update,post');
 
 // Profile related routes
 
