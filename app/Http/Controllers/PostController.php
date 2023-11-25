@@ -16,32 +16,31 @@ class PostController extends Controller
         return view('pages.create-post', ['categories' => $categories]);
     }
 
+    
+
     public function storeNewPost(CreatePostRequest $request)
     {
-        $validatedData = $request->validated();
+        {
+            $validatedData = $request->validated();
     
-        $validatedData['title'] = strip_tags($validatedData['title']);
-        $validatedData['body'] = strip_tags($validatedData['body']);
-        $validatedData['user_id'] = auth()->id();
-    
-        $postData = [
-            'title' => $validatedData['title'],
-            'body' => $validatedData['body'],
-            'category_id' => $validatedData['category_id'],
-            'user_id' => $validatedData['user_id'],
-        ];
-    
-        if ($request->has('subcategory_id')) {
-            $postData['subcategory_id'] = $validatedData['subcategory_id'];
+            $validatedData['title'] = strip_tags($validatedData['title']);
+            $validatedData['body'] = strip_tags($validatedData['body']);
+            $validatedData['user_id'] = auth()->id();
+        
+            $postData = [
+                'title' => $validatedData['title'],
+                'body' => $validatedData['body'],
+                'user_id' => $validatedData['user_id'],
+                'category_id' => $validatedData['category_id'],
+                'subcategory_id' => $validatedData['subcategory_id'] ?? null,
+                'subsubcategory_id' => $validatedData['subsubcategory_id'] ?? null,
+            ];
+        
+            $newPost = Post::create($postData);
+        
+            return redirect("/post/{$newPost->id}")->with('success', 'Naujas įrašas sėkmingai sukurtas!');
+
         }
-    
-        if ($request->has('subsubcategory_id')) {
-            $postData['subsubcategory_id'] = $validatedData['subsubcategory_id'];
-        }
-    
-        $newPost = Post::create($postData);
-    
-        return redirect("/post/{$newPost->id}")->with('success', 'Naujas įrašas sėkmingai sukurtas!');
     }
 
     public function singlePostPage(Post $post) {
