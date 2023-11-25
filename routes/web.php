@@ -27,16 +27,16 @@ Route::get('/get-subsubcategories/{subcategory}', [CategoryController::class, 'g
 
 //@desc Auth related routes
 
-Route::get('/register', [AuthController::class, 'registerPage']);
-Route::get('/login', [AuthController::class, 'loginPage']);
+Route::get('/register', [AuthController::class, 'registerPage'])->middleware('guest');
+Route::get('/login', [AuthController::class, 'loginPage'])->name('login')->middleware('guest');
 
-Route::post('/register', [AuthController::class, 'registerForm']);
-Route::post('/login', [AuthController::class, 'loginForm']);
-Route::post('/logout', [AuthController::class, 'logoutForm']);
+Route::post('/register', [AuthController::class, 'registerForm'])->middleware('guest');
+Route::post('/login', [AuthController::class, 'loginForm'])->middleware('guest');
+Route::post('/logout', [AuthController::class, 'logoutForm'])->middleware('auth');
 
 // Post related routes
 
-Route::get('/create-post', [PostController::class, 'createPostPage']);
+Route::get('/create-post', [PostController::class, 'createPostPage'])->middleware('auth');
 Route::get('/post/{post}', [PostController::class, 'singlePostPage']);
 
-Route::post('/create-post', [PostController::class, 'storeNewPost']);
+Route::post('/create-post', [PostController::class, 'storeNewPost'])->middleware('auth');
