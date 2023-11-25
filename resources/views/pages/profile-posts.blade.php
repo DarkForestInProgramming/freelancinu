@@ -23,7 +23,7 @@
             </div>
             
                 <div class="flex items-center justify-center my-4 px-6 ">
-                    <button href="#" class="text-gray-200 block rounded-lg text-center font-medium leading-6 px-4 py-2 bg-gray-900 hover:bg-black hover:text-white"><i class="fa-solid fa-user-plus fa-sm"></i> Sekti</button>
+                    <button href="#" class="text-gray-200 block rounded-lg text-center font-semibold uppercase leading-6 px-4 py-2 bg-gray-900 hover:bg-black hover:text-white"><i class="fa-solid fa-user-plus fa-sm"></i> Sekti</button>
                 </div>
 
                 <div class="flex justify-between items-center my-5 px-6 border-b">

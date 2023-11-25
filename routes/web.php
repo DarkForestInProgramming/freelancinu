@@ -19,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 
 //@desc Unlerated routes
 
+Route::fallback(function () {
+    return redirect('/');
+});
+
 Route::get('/', [AuthController::class, 'homePage'])->name('home');
 
 // @desc Category related routes

@@ -1,14 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mx-auto py-8">
-    <form action="/create-post" method="POST" class="max-w-md mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+<div class="container mx-auto py-4">
+    <form class="max-w-md mx-auto bg-white md:shadow-md rounded px-8 pt-6 pb-8 mb-4" action="/create-post" method="POST">
         @csrf
+
         <div class="mb-8 flex flex-col items-center">
-            <img src="logo.png" width="100" alt="Freelancinu">
+            <img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1700909453/Freelancinu/freelancinu_logo.png" width="100" alt="Freelancinu">
             <h1 class="mb-2 text-2xl">Įrašo kūrimas</h1>
-            <span class="text-gray-400">Pasidalink savo mintimis</span>
+            <span class="text-gray-400">Pasidalinkite savo mintimis</span>
         </div>
+
         <div class="mb-4">
             <label for="title" class="block mb-1 text-sm text-gray-500 font-medium">Pavadinimas: <span class="ml-2 text-xs text-red-500 uppercase">Būtinas</span></label>
             <input value="{{@old('title')}}" type="text" id="title" name="title" class="w-full title bg-gray-100 border border-gray-300 p-2 outline-none rounded">
@@ -53,12 +55,15 @@
         </div>
 
         <div>
-            <button type="submit" class="w-full bg-laravel text-white px-4 py-2 rounded-md hover:bg-red-600">Sukurti įrašą</button>
+            <button type="submit" class="w-full bg-black border-laravel text-white font-semibold uppercase px-4 py-2 rounded-md hover:bg-laravel">Sukurti įrašą</button>
         </div>
+
         <x-divider />
+
         <div class="max-w-md mx-auto bg-green-100 border-l-4 border-green-500 text-green-700 px-4 py-3 rounded-md mb-4">
             <p><strong>Informacija:</strong> Kurdami įrašą būkite budrūs ir susipažinkite su forumo taisyklėmis, kadangi keliant kenksmingus įrašus autoriaus paskyra bus <span class="underline">negrįžtamai</span> ištrinama.</p>
         </div>
+
     </form>
 </div>
 @endsection
