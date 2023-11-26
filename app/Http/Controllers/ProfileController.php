@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Follow;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -10,7 +11,11 @@ use Intervention\Image\Facades\Image;
 class ProfileController extends Controller
 {
     public function profilePage(User $user) {
-        return view('pages.profile-posts', ['username' => $user->username, 'role' => $user->role, 'avatar' => $user->avatar, 'posts' => $user->posts()->latest()->get(), 'postCount' => $user->posts()->count()]);
+        $currentlyFollowing = 0;
+        if (auth()->check()) {
+            $currentlyFollowing = Follow::where([['user_id', '=', auth()->user()->id], ['followeduser', '=', $user->id]])->count();
+        }
+        return view('pages.profile-posts', ['currentlyFollowing' => $currentlyFollowing, 'username' => $user->username, 'role' => $user->role, 'avatar' => $user->avatar, 'posts' => $user->posts()->latest()->get(), 'postCount' => $user->posts()->count()]);
     }
 
     public function avatarPage() {

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\FollowController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VerificationController;
@@ -76,4 +77,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/change-avatar', [ProfileController::class, 'avatarPage']);
     Route::post('/change-avatar', [ProfileController::class, 'changeAvatar']);
+    Route::post('/create-follow/{user:username}', [FollowController::class, 'createFollow']);
+    Route::delete('/remove-follow/{user:username}', [FollowController::class, 'removeFollow']);
 });

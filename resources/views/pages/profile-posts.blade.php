@@ -4,9 +4,8 @@
 <div class="container mx-auto my-32">
     <div>
         <div class="bg-white relative shadow rounded-lg w-5/6 md:w-5/6 lg:w-4/6 xl:w-3/6 mx-auto">
-            
             <div class="flex justify-center">
-                    <img src="{{$avatar}}" alt="{{$username}}" class="rounded-full mx-auto absolute -top-20 w-32 h-32 shadow-md border-4 border-white transition duration-200 transform hover:scale-110">
+                    <img src="{{$avatar}}" alt="{{$username}}" class="rounded-full mx-auto absolute -top-20 w-32 h-32 shadow-md border-4 border-white transition duration-200 transform hover:scale-110" />
             </div>
     
             <div class="mt-16">
@@ -22,8 +21,24 @@
                 <button class="bg-laravel/80 text-center text-white font-thin py-1 px-8 mt-2 mb-4 rounded">{{$role}}</button>
             </div>
             
-                <div class="flex items-center justify-center my-4 px-6 ">
-                    <button href="#" class="text-gray-200 block text-center font-semibold uppercase leading-6 px-4 py-2 bg-gray-900 hover:bg-black hover:text-white"><i class="fa-solid fa-user-plus fa-sm"></i> Sekti</button>
+                <div class="flex items-center justify-center my-4 px-6">
+                    @auth
+                    @if(!$currentlyFollowing AND auth()->user()->username != $username)
+                    <form action="/create-follow/{{$username}}" method="POST">
+                        @csrf
+                    <button type="submit" class="text-white block text-center font-semibold uppercase text-sm leading-6 px-4 py-2 bg-gray-900 hover:bg-black hover:text-white"><i class="fa-solid fa-user-plus fa-sm"></i> Sekti</button>
+                    </form>
+                    @endif
+
+                    @if($currentlyFollowing)
+                    <form action="/remove-follow/{{$username}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                    <button type="submit" class="text-white block text-center font-semibold uppercase leading-6 px-4 py-2 bg-laravel text-sm hover:bg-black hover:text-white"><i class="fa-solid fa-user-times fa-sm"></i> Nebesekti</button>
+                    </form>
+                    @endif
+                    
+                    @endauth
                 </div>
 
                 <div class="flex justify-between items-center my-5 px-6 border-b">
