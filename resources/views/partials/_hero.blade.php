@@ -16,7 +16,7 @@
     <div>
         <a
         href="/register"
-        class="inline-block border-2 border-white text-white py-1 px-2 md:py-2 md:px-4 rounded-xl uppercase mt-2 hover:text-black hover:border-black"
+        class="inline-block border-2 border-white text-white py-2 px-4 rounded-xl uppercase mt-2 hover:text-black hover:border-black"
         >Junkis prie mūsų</a>
         </div>
     @endauth
