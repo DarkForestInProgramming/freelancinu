@@ -4,6 +4,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\VerificationController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +25,22 @@ Route::fallback(function () {
     return redirect('/');
 });
 
-Route::get('/', [AuthController::class, 'homePage'])->name('home');
+Route::get('/', function() {
+    return view('pages.home');
+})->name('home');
+
+//@desc Email related rooutes
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $req) {
+    $req->fulfill();
+    return redirect('/')->with('success', 'El. paštas sėkmingai patvirtintas!');
+})->middleware(['signed'])->name('verification.verify');
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/verify', [VerificationController::class, 'verifyPage'])->name('verification.notice');
+    Route::get('/resend/verification/email', [VerificationController::class, 'resendEmail']);
+});
 
 // @desc Category related routes
 
@@ -41,10 +58,10 @@ Route::post('/logout', [AuthController::class, 'logoutForm'])->middleware('auth'
 
 // Post related routes
 
-Route::get('/create-post', [PostController::class, 'createPostPage'])->middleware('auth');
+Route::get('/create-post', [PostController::class, 'createPostPage'])->middleware('auth', 'verified');
 Route::get('/post/{post}', [PostController::class, 'singlePostPage']);
 
-Route::post('/create-post', [PostController::class, 'storeNewPost'])->middleware('auth');
+Route::post('/create-post', [PostController::class, 'storeNewPost'])->middleware('auth', 'verified');
 Route::delete('/post/{post}', [PostController::class, 'deletePost'])->middleware('can:delete,post');
 Route::get('/post/{post}/edit', [PostController::class, 'editPostPage'])->middleware('can:update,post');
 Route::put('/post/{post}', [PostController::class, 'updatePost'])->middleware('can:update,post');
@@ -52,6 +69,6 @@ Route::put('/post/{post}', [PostController::class, 'updatePost'])->middleware('c
 // Profile related routes
 
 Route::get('/profile/{user:username}', [ProfileController::class, 'profilePage']);
-Route::get('/change-avatar', [ProfileController::class, 'avatarPage'])->middleware('auth');
-Route::post('/change-avatar', [ProfileController::class, 'changeAvatar'])->middleware('auth');
+Route::get('/change-avatar', [ProfileController::class, 'avatarPage'])->middleware('auth', 'verified');
+Route::post('/change-avatar', [ProfileController::class, 'changeAvatar'])->middleware('auth', 'verified');
 

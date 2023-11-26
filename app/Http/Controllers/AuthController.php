@@ -9,10 +9,6 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-    public function homePage() {
-        return view('pages.home');
-    }
-
     public function registerPage() {
         return view('pages.register');
     }
@@ -23,7 +19,8 @@ class AuthController extends Controller
 
         $user = User::create($incomingFields);
         auth()->login($user);
-        return redirect('/')->with('success', 'Sveikiname tapus mūsų nariu!');
+        $user->sendEmailVerificationNotification();
+        return redirect('/verify');
     }
 
     public function loginPage() {
