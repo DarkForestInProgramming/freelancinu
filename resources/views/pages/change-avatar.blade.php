@@ -18,7 +18,7 @@
             </div>
 
             <div>
-                <button type="submit" class="w-full bg-black border border-laravel font-semibold uppercase text-white py-2 rounded-md hover:bg-laravel transition duration-300">Išsaugoti</button>
+                <button type="submit" class="w-full bg-laravel font-semibold uppercase text-white py-2 hover:bg-black transition duration-300">Išsaugoti</button>
             </div>
 
         </form>

@@ -9,7 +9,7 @@
         <div class="mb-8 flex flex-col items-center">
             <img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1700909453/Freelancinu/freelancinu_logo.png" width="100" alt="Freelancinu">
             <h1 class="mb-2 text-2xl">Įrašo redagavimas</h1>
-            <span class="text-gray-400">Pakeisk savo mintis</span>
+            <span class="text-gray-400">Redaguokite savo mintis</span>
         </div>
 
         <div class="mb-4">
@@ -56,12 +56,10 @@
         </div>
 
         <div>
-            <button type="submit" class="w-full bg-black text-white border border-laravel font-semibold uppercase px-4 py-2 rounded-md hover:bg-red-600">Išsaugoti</button>
+            <button type="submit" class="w-full bg-laravel text-white font-semibold uppercase px-4 py-2 hover:bg-black">Išsaugoti</button>
         </div>
 
-        <x-divider />
-
-        <div class="max-w-md mx-auto bg-green-100 border-l-4 border-green-500 text-green-700 px-4 py-3 rounded-md mb-4">
+        <div class="max-w-md mx-auto bg-green-100 border-l-4 border-green-500 text-green-700 px-4 py-3 rounded-md mt-4 mb-4">
             <p><strong>Informacija:</strong> Kurdami įrašą būkite budrūs ir susipažinkite su forumo taisyklėmis, kadangi keliant kenksmingus įrašus autoriaus paskyra bus <span class="underline">negrįžtamai</span> ištrinama.</p>
         </div>
 

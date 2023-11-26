@@ -55,12 +55,11 @@
         </div>
 
         <div>
-            <button type="submit" class="w-full bg-black border-laravel text-white font-semibold uppercase px-4 py-2 rounded-md hover:bg-laravel">Sukurti įrašą</button>
+            <button type="submit" class="w-full bg-laravel text-white font-semibold uppercase px-4 py-2 hover:bg-black">Sukurti įrašą</button>
         </div>
 
-        <x-divider />
 
-        <div class="max-w-md mx-auto bg-green-100 border-l-4 border-green-500 text-green-700 px-4 py-3 rounded-md mb-4">
+        <div class="max-w-md mx-auto bg-green-100 border-l-4 border-green-500 text-green-700 px-4 py-3 mt-4 rounded-md mb-4">
             <p><strong>Informacija:</strong> Kurdami įrašą būkite budrūs ir susipažinkite su forumo taisyklėmis, kadangi keliant kenksmingus įrašus autoriaus paskyra bus <span class="underline">negrįžtamai</span> ištrinama.</p>
         </div>
 

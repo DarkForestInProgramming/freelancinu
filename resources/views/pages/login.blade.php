@@ -28,10 +28,10 @@
             </div>
 
             <div>
-                <button type="submit" class="w-full bg-black text-white border border-laravel font-semibold uppercase py-2 rounded-md hover:bg-laravel transition duration-300">Prisijungti</button>
+                <button type="submit" class="w-full bg-laravel text-white font-semibold uppercase py-2 hover:bg-black transition duration-300">Prisijungti</button>
             </div>
-            <x-divider />
-            <p class="text-center text-sm text-gray-600">Esate naujas narys? <a href="/register" class="text-blue-500 hover:underline">Registruokitės čia</a></p>
+
+            <p class="mt-6 text-center text-sm text-gray-600">Esate naujas narys? <a href="/register" class="text-blue-500 hover:underline">Registruokitės čia</a></p>
         </form>
 </div>
 @endsection

@@ -18,7 +18,7 @@
             </div>
 
             <div class="flex justify-center mt-3">
-                <button href="#" class="text-gray-200 block rounded-lg text-center font-semibold uppercase text-sm leading-6 px-3 py-1 bg-gray-900 hover:bg-black hover:text-white"><i class="fa-solid fa-user-plus fa-sm"></i> Sekti</button>
+                <button href="#" class="text-gray-200 block text-center font-semibold uppercase text-sm leading-6 px-3 py-1 bg-gray-900 hover:bg-black hover:text-white"><i class="fa-solid fa-user-plus fa-sm"></i> Sekti</button>
             </div>
             
         </div>
