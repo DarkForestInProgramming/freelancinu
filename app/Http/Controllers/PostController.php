@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreatePostRequest;
 use App\Models\Category;
+use App\Models\Follow;
 use App\Models\Post;
 use Illuminate\Support\Str;
 
@@ -40,8 +41,12 @@ class PostController extends Controller
     }
 
     public function singlePostPage(Post $post) {
+        $currentlyFollowing = 0;
+        if (auth()->check()) {
+            $currentlyFollowing = Follow::where([['user_id', '=', auth()->user()->id], ['followeduser', '=', $post->user->id]])->count();
+        }
         $post['body'] = strip_tags(Str::markdown($post->body), '<p><ul><ol><li><strong><em><h3><br>');
-        return view('pages.single-post', ['post' => $post]);
+        return view('pages.single-post', ['post' => $post, 'currentlyFollowing' => $currentlyFollowing]);
     }
 
     public function deletePost(Post $post) {

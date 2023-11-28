@@ -81,7 +81,7 @@ export default class Search {
               let postDate = new Date(post.created_at);
               return `<a href="/post/${
                   post.id
-              }" class="w-full border-t border-gray-400 text-gray-600 py-4 pl-6 pr-3 w-full block">
+              }" class="w-full border-t border-gray-400 text-gray-600 py-4 pl-6 pr-3 block">
         <img class="rounded-full h-6 shadow-md inline-block mr-2" src="${
             post.user.avatar
         }"> <strong>${post.title}</strong>
