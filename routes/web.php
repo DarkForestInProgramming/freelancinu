@@ -77,6 +77,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/change-avatar', [ProfileController::class, 'avatarPage']);
     Route::post('/change-avatar', [ProfileController::class, 'changeAvatar']);
+    Route::get('/profile/{user:username}/followers', [ProfileController::class, 'profileFollowers']);
+    Route::get('/profile/{user:username}/following', [ProfileController::class, 'profileFollowing']);
     Route::post('/create-follow/{user:username}', [FollowController::class, 'createFollow']);
     Route::delete('/remove-follow/{user:username}', [FollowController::class, 'removeFollow']);
 });

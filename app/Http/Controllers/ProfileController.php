@@ -6,16 +6,21 @@ use App\Models\Follow;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\View;
 use Intervention\Image\Facades\Image;
 
 class ProfileController extends Controller
 {
-    public function profilePage(User $user) {
+    public function getSharedData($user) {
         $currentlyFollowing = 0;
         if (auth()->check()) {
             $currentlyFollowing = Follow::where([['user_id', '=', auth()->user()->id], ['followeduser', '=', $user->id]])->count();
         }
-        return view('pages.profile-posts', ['currentlyFollowing' => $currentlyFollowing, 'username' => $user->username, 'role' => $user->role, 'avatar' => $user->avatar, 'posts' => $user->posts()->latest()->get(), 'postCount' => $user->posts()->count()]);
+        View::share('sharedData', ['currentlyFollowing' => $currentlyFollowing, 'username' => $user->username, 'role' => $user->role, 'avatar' => $user->avatar, 'postCount' => $user->posts()->count(), 'followerCount' => $user->followers()->count(), 'followingCount' => $user->followingTheseUsers()->count()]);
+    }
+    public function profilePage(User $user) {
+        $this->getSharedData($user);
+        return view('pages.profile-posts', ['posts' => $user->posts()->latest()->paginate(5)]);
     }
 
     public function avatarPage() {
@@ -37,5 +42,14 @@ class ProfileController extends Controller
         Storage::delete(str_replace("/storage/", "public/", $oldAvatar));
         return back()->with('success', 'Profilio nuotrauka pakeista! Dabar galite pasirodyti sukurdami naują įrašą.');
     }
+    }
+    public function profileFollowers(User $user) {
+        $this->getSharedData($user);
+        return view('pages.profile-followers', ['followers' => $user->followers()->latest()->paginate(5)]);
+    }
+
+    public function profileFollowing(User $user) {
+        $this->getSharedData($user);
+        return view('pages.profile-following', ['following' => $user->followingTheseUsers()->latest()->paginate(5)]);
     }
 }
