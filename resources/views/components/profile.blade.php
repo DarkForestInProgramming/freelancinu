@@ -40,8 +40,8 @@
                 </div>
 
                 <div class="flex justify-between items-center my-5 px-6 border-b">
-                    <a href="/profile/{{$sharedData['username']}}" class="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3">Įrašų: {{$sharedData['postCount']}}</a>
-                    <a href="/profile/{{$sharedData['username']}}/followers" class="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3">Sekėjų: {{$sharedData['followerCount']}} </a>
+                    <a href="/profile/{{$sharedData['username']}}" class="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3">Įrašai(-ų): {{$sharedData['postCount']}}</a>
+                    <a href="/profile/{{$sharedData['username']}}/followers" class="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3">Sekėjai(-ų): {{$sharedData['followerCount']}} </a>
                     <a href="/profile/{{$sharedData['username']}}/following" class="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3">Sekama: {{$sharedData['followingCount']}} </a>
                 </div>
 

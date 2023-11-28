@@ -70,7 +70,7 @@ export default class Search {
     renderResultsHTML(posts) {
         if (posts.length) {
             this.resultsArea.innerHTML =
-                DOMPurify.sanitize(`<div class="w-full flex flex-col items-center overflow-hidden text-sm">
+                DOMPurify.sanitize(`<div class="w-full flex flex-col items-center overflow-hidden">
       <div class="my-4"><strong>Paieškos Rezultatai</strong> (${
           posts.length > 1
               ? `rasti ${posts.length} įrašai(-ų)`
@@ -81,11 +81,11 @@ export default class Search {
               let postDate = new Date(post.created_at);
               return `<a href="/post/${
                   post.id
-              }" class="w-full border-t border-gray-400 text-gray-600 py-4 pl-6 pr-3 block">
+              }" class="w-full border-b border-gray-500 text-gray-600 hover:bg-gray-300 py-4 pl-6 pr-3 block">
         <img class="rounded-full h-6 shadow-md inline-block mr-2" src="${
             post.user.avatar
         }"> <strong>${post.title}</strong>
-        <span class="text-muted small">nuo ${post.user.username} sukurta 
+        <span>nuo ${post.user.username} sukurta 
         ${postDate.getFullYear()}-${
                   postDate.getMonth() + 1
               }-${postDate.getDate()}</span>
@@ -132,7 +132,7 @@ export default class Search {
     <div class="search-overlay-top shadow-sm">
       <div class="container mx-auto px-4 md:px-0">
         <label for="live-search-field" class="search-overlay-icon text-laravel"><i class="fas fa-search"></i></label>
-        <input autocomplete="off" type="text" id="live-search-field" class="live-search-field" placeholder="Kas Jus domina?">
+        <input autocomplete="off" type="text" id="live-search-field" class="live-search-field" placeholder="Paieška">
         <span class="close-live-search"><i class="fas fa-times-circle"></i></span>
       </div>
     </div>
