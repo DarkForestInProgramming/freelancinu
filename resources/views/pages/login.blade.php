@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<x-layout docTitle='Prisijungimas'>
 <div class="container mx-auto py-4">
         <form class="max-w-md mx-auto bg-white md:shadow-md rounded px-8 pt-6 pb-8 mb-4" action="/login" method="POST">
             @csrf
@@ -34,4 +32,4 @@
             <p class="mt-6 text-center text-sm text-gray-600">Esate naujas narys? <a href="/register" class="text-blue-500 hover:underline">Registruokitės čia</a></p>
         </form>
 </div>
-@endsection
+</x-layout>

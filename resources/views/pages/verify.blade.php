@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<x-layout docTitle='Paskyros Patvirtinimas'>
 <div class="flex justify-center items-center py-4">
     <div class="bg-white p-6 rounded-lg shadow-md">
         @if(auth()->user() && auth()->user()->hasVerifiedEmail())
@@ -21,4 +19,4 @@
         @endif
     </div>
 </div>
-@endsection
+</x-layout>

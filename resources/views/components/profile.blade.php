@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<x-layout :docTitle="$docTitle">
 <div class="container mx-auto my-32">
     <div>
         <div class="bg-white relative shadow rounded-lg w-5/6 md:w-5/6 lg:w-4/6 xl:w-3/6 mx-auto">
@@ -56,4 +54,4 @@
 
     </div>
 </div>
-@endsection
+</x-layout>

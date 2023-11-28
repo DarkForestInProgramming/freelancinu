@@ -1,7 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
-
+<x-layout :docTitle="$post->title">
 <div class="py-4">
     <div class="max-w-7xl mx-auto bg-white rounded-lg md:shadow-md p-6 sm:flex items-start">
         <!-- Kairė pusė - vartotojo informacija -->
@@ -63,4 +60,4 @@
     </div> --}}
     
 </div>
-@endsection
+</x-layout>

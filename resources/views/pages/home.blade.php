@@ -1,7 +1,5 @@
-@extends('layouts.app')
-
-@section('content')
+<x-layout>
 
 @include('partials._hero')
 
-@endsection
+</x-layout>

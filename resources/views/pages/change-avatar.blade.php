@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<x-layout docTitle='Profilio Nuotraukos Keitimas'>
 <div class="container mx-auto py-4">        
         <form class="max-w-md mx-auto bg-white md:shadow-md rounded px-8 pt-6 pb-8 mb-4" action="/change-avatar" method="POST" enctype="multipart/form-data">  
             <div class="mb-8 flex flex-col items-center">
@@ -23,4 +21,4 @@
 
         </form>
 </div>
-@endsection
+</x-layout>

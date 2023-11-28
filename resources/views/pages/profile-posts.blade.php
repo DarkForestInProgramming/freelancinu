@@ -1,4 +1,4 @@
-<x-profile :sharedData="$sharedData">
+<x-profile :sharedData="$sharedData" docTitle="{{$sharedData['username']}} Profilis">
     <div class="w-full">
         <h3 class="font-medium text-gray-900 text-left px-6">"{{$sharedData['username']}}" veikla</h3>
         <div class="mt-5 w-full flex flex-col items-center overflow-hidden text-sm">
@@ -8,7 +8,7 @@
                 <span class="font-semibold">{{$post->title}}</span>
                     <span class="text-gray-500 text-xs">sukurta {{$post->created_at->format('Y-m-d')}}</span>
             </a>
-            @endforeach  
+            @endforeach
             <div class="my-4">{{$posts->links()}}</div>                
         </div>
     </div>
