@@ -3,7 +3,9 @@
     <div class="max-w-7xl mx-auto bg-white rounded-lg md:shadow-md p-6 sm:flex items-start">
         <!--Left side -->
         <div class="w-full sm:w-1/6 p-6 text-center border-b md:border-none">
+            <a href="/profile/{{$post->user->username}}">
             <h1 class="text-2xl font-bold mb-2">{{$post->user->username}}</h1>
+           </a>
 
             <div class="flex items-center justify-center w-24 h-24 rounded-full shadow-md mb-4 mx-auto">
                 <img src="{{$post->user->avatar}}" alt="{{$post->user->username}}" class="w-24 h-24 rounded-full">
@@ -26,7 +28,7 @@
             <form action="/remove-follow/{{$post->user->username}}" method="POST">
                 @method("DELETE")
                 @csrf
-                    <button type="submit" class="text-white block text-center font-semibold uppercase text-xs leading-6 px-3 py-1 bg-laravel hover:bg-black hover:text-white"><i class="fa-solid fa-user-plus fa-sm"></i> Nebesekti</button>
+                    <button type="submit" class="text-white block text-center font-semibold uppercase text-xs leading-6 px-3 py-1 bg-laravel hover:bg-black hover:text-white"><i class="fa-solid fa-user-times fa-sm"></i> Nebesekti</button>
                 </form>
             @endif
             </div>      

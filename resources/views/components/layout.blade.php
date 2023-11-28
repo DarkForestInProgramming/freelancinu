@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+    name="description"
+    content="Freelancinu - laisvai samdomų darbuotojų patirties dalinimosi, ryšių kūrimo platforma."
+  />
     <title>
     @isset($docTitle)
     {{$docTitle}} | Freelancinu
@@ -27,18 +31,16 @@
     @vite(['resources/js/app.js'])
 </head>
 
-<body class="mb-48">
+<body>
     @section('header')
     @include('partials._header')
-    <div class="content">
     @if(session()->has('success'))
     <x-toast />
     @endif
     @if(session()->has('error'))
     <x-toast />
     @endif
-    {{$slot}}
-    </div>
+    <main class="flex flex-col h-screen">{{$slot}}</main>
     @section('footer')
     @include('partials._footer')
     @show 
