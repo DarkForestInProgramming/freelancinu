@@ -44,6 +44,9 @@
     @section('footer')
     @include('partials._footer')
     @show 
+    @auth
+    <div data-username="{{auth()->user()->username}}" data-avatar="{{auth()->user()->avatar}}" id="chat-wrapper" class="chat-wrapper shadow-md border-t border-l border-r"></div>
+    @endauth
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>

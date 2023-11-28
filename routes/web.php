@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\FollowController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
@@ -83,3 +84,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/create-follow/{user:username}', [FollowController::class, 'createFollow']);
     Route::delete('/remove-follow/{user:username}', [FollowController::class, 'removeFollow']);
 });
+
+// Chat related routes
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::post('/send-chat-message', [ChatController::class, 'chat']);
+});
+

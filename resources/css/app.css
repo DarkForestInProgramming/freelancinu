@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+.avatar-small {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    margin-right: 5px;
+    position: relative;
+    top: -3px;
+}
+
+.avatar-tiny {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    margin-right: 4px;
+    position: relative;
+    top: -1px;
+}
+
 .liveValidateMessage {
     transition: all 0.5s ease-out;
     top: -6px;
@@ -222,7 +240,7 @@
     text-align: right;
     padding: 4px 7px;
     border-radius: 12px;
-    background-color: #007bff;
+    background-color: #ef3b2d;
     color: #fff;
 }
 
