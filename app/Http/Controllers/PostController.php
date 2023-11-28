@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreatePostRequest;
 use App\Models\Category;
 use App\Models\Post;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class PostController extends Controller
@@ -64,5 +63,11 @@ class PostController extends Controller
         $post->update($incomingFields);
 
         return back()->with('success', 'Įrašas sėkmingai atnaujintas');
+    }
+
+    public function search($term) {
+        $posts = Post::search($term)->get();
+        $posts->load('user:id,username,avatar');
+        return $posts;
     }
 }
