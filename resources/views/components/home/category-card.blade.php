@@ -2,7 +2,7 @@
     @foreach ($categories as $category)
         <div class="bg-white border border-gray-200 rounded p-4 shadow-md">
             <a href="/category/{{$category->slug}}">
-                <img class="w-full rounded-lg mb-4 md:mb-0 md:h-48 object-cover" src="{{$category->image}}" alt="{{$category->title}}" />
+                <img class="w-full rounded-lg mb-4 md:mb-0 md:h-48 hover:scale-105 transition duration-500 object-cover" src="{{$category->image}}" alt="{{$category->title}}" />
             </a>
             <div class="mt-4">
                 <h3 class="text-xl md:text-2xl font-semibold">
