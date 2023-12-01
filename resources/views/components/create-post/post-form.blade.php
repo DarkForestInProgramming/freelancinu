@@ -1,14 +1,14 @@
 <form class="max-w-md mx-auto bg-white md:shadow-md rounded px-8 pt-6 pb-8 mb-4" action="/create-topic" method="POST">
     @csrf
     <div class="mb-8 flex flex-col items-center">
-        <img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1700909453/Freelancinu/freelancinu_logo.png" width="100" alt="Freelancinu">
+        <img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701456093/Freelancinu/freelancinu_logo.png" width="100" alt="Freelancinu">
         <h1 class="mb-2 text-2xl">Įrašo kūrimas</h1>
         <span class="text-gray-400">Pasidalinkite savo mintimis</span>
     </div>
 
     <div class="mb-4">
         <label for="title" class="block mb-1 text-sm text-gray-500 font-medium">Pavadinimas: <span class="ml-2 text-xs text-red-500 uppercase">Būtinas</span></label>
-        <input value="{{@old('title')}}" type="text" id="title" name="title" class="w-full title bg-gray-100 border border-gray-300 p-2 outline-none rounded">
+        <input value="{{@old('title')}}" type="text" id="title" name="title" class="w-full title  border border-gray-300 p-2 outline-none rounded">
         @error('title')
         <p class="bg-red-200 text-sm text-red-800 py-3 px-2 mt-1 rounded shadow-sm">{{ $message }}</p>
         @enderror

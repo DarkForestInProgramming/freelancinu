@@ -1,5 +1,5 @@
 <x-layout :docTitle="$docTitle">
-<div class="container mx-auto my-32">
+<div class="container mx-auto my-32 mb-48">
     <div>
         <div class="bg-white relative shadow rounded-lg w-5/6 md:w-5/6 lg:w-4/6 xl:w-3/6 mx-auto">
             <div class="flex justify-center">
@@ -39,10 +39,10 @@
                     @endauth
                 </div>
 
-                <div class="flex justify-between items-center my-5 px-6 border-b">
-                    <a href="/profile/{{$sharedData['slug']}}" class="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3">Įrašai(-ų): {{$sharedData['postCount']}}</a>
-                    <a href="/profile/{{$sharedData['slug']}}/followers" class="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3">Sekėjai(-ų): {{$sharedData['followerCount']}} </a>
-                    <a href="/profile/{{$sharedData['slug']}}/following" class="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3">Sekama: {{$sharedData['followingCount']}} </a>
+                <div class="flex justify-between items-center my-5 px-6 font-medium text-xs md:text-sm border-b">
+                    <a href="/profile/{{$sharedData['slug']}}" class="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in text-center w-full py-3">Įrašai(-ų): {{$sharedData['postCount']}}</a>
+                    <a href="/profile/{{$sharedData['slug']}}/followers" class="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in  text-center w-full py-3">Sekėjai(-ų): {{$sharedData['followerCount']}} </a>
+                    <a href="/profile/{{$sharedData['slug']}}/following" class="text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in text-center w-full py-3">Sekama: {{$sharedData['followingCount']}} </a>
                 </div>
 
                 <div class="profile-slot-content">

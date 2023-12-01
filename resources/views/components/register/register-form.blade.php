@@ -1,7 +1,7 @@
 <form class="max-w-md mx-auto bg-white md:shadow-md rounded px-8 pt-6 pb-8 mb-4" action="/register" method="POST">
     @csrf
     <div class="mb-8 flex flex-col items-center">
-        <img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1700909453/Freelancinu/freelancinu_logo.png" width="100" alt="Freelancinu"/>
+        <img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701456093/Freelancinu/freelancinu_logo.png" width="100" alt="Freelancinu"/>
         <h1 class="mb-2 text-2xl">Registracija</h1>
         <span class="text-gray-400">Junkitės prie mūsų</span>
     </div>

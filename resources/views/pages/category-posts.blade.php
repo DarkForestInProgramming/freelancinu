@@ -1,5 +1,5 @@
 <x-layout :docTitle="$category->name">
-<div class="py-4">
+<div class="py-4 mb-48">
         <div class="w-11/12 lg:w-3/4 mx-auto bg-white overflow-hidden rounded-md shadow-md p-6 mb-6">
             <x-category.breadcrumb :category="$category"/>
             <h1 class="text-2xl md:text-4xl font-bold mb-4 border-b p-3">{{$category->name}}</h1>
@@ -8,9 +8,6 @@
                 @foreach ($category->subcategories as $subcategory)        
                 <li class="flex items-center justify-between py-4 border-b border-gray-200">   
                     <x-category.subcategories :subcategory="$subcategory" />
-                    @endforeach
-                    @foreach($subcategory->posts->sortByDesc('created_at')->take(1) as $post)
-                    <x-category.sub-post :post="$post" />
                     @endforeach
                 </li>
             </ul>
@@ -23,7 +20,7 @@
             <x-posts :post="$post"/>
             @endforeach
             @else
-            <p>Dar nėra sukurtų temų.</p>
+            <p class="text-sm md:text-base">Dar nėra sukurtų temų.</p>
             @endif
         </ul>
     </div>

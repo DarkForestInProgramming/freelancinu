@@ -40,7 +40,7 @@
     @if(session()->has('error'))
     <x-toast />
     @endif
-    <main class="flex flex-col h-screen">{{$slot}}</main>
+    <main>{{$slot}}</main>
     @section('footer')
     @include('partials._footer')
     @show 

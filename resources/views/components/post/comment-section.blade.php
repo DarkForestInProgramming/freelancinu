@@ -1,4 +1,4 @@
-<div class="max-w-7xl mx-auto bg-white rounded-lg shadow-md p-6 mt-6">
+<div class="max-w-7xl mx-auto bg-white rounded-lg md:shadow-md p-6 mt-6">
     <h2 class="text-2xl font-bold mb-4">Komentarai</h2>
     <form action="/post/comment" method="POST" class="mb-8">
         @csrf

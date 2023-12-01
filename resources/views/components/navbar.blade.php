@@ -1,7 +1,7 @@
 <nav class="flex justify-between items-center w-full mb-4">
 
     <a href="/">
-        <img class="w-24" src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1700909453/Freelancinu/freelancinu_logo.png" alt="Freelancinu" />
+        <img class="w-24" src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701456093/Freelancinu/freelancinu_logo.png" alt="Freelancinu" />
     </a>
 
     <ul class="flex space-x-6 mr-6 text-lg">
@@ -30,13 +30,13 @@
         @else
 
         <li>
-            <a href="/register" title="Registracija" class="hover:text-laravel">
+            <a href="/register" title="Registracija" class="hover:text-laravel text-sm md:text-lg">
                 <i class="fa-solid fa-user-plus"></i> Registruotis
                 </a>
         </li>
 
         <li>
-            <a href="/login" title="Prisijungimas" class="hover:text-laravel">
+            <a href="/login" title="Prisijungimas" class="hover:text-laravel text-base md:text-lg">
                 <i class="fa-solid fa-arrow-right-to-bracket"></i>
                 Prisijungti
             </a>

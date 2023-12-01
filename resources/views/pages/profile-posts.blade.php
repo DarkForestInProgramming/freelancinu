@@ -10,9 +10,7 @@
             </a>
             @endforeach
             @if($posts->count() >= 5)
-            <div class="my-4">
-            {{$posts->links()}}
-            </div>
+            <x-profile.posts-paginator :posts="$posts" />
             @endif                  
         </div>
     </div>

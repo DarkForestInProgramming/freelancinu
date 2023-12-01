@@ -9,9 +9,7 @@
             </a>
             @endforeach
             @if($following->count() >= 5)
-            <div class="my-4">
-            {{$following->links()}}
-            </div>
+            <x-profile.following-paginator :following="$following"/>
             @endif           
         </div>
     </div>

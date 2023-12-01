@@ -1,4 +1,4 @@
-<div class="container mx-auto py-4">        
+<div class="container mx-auto py-4 mb-48">        
     <form class="max-w-md mx-auto bg-white md:shadow-md rounded px-8 pt-6 pb-8 mb-4" action="/change-avatar" method="POST" enctype="multipart/form-data">  
         <div class="mb-8 flex flex-col items-center">
             <img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1700909453/Freelancinu/freelancinu_logo.png" width="100" alt="Freelancinu"/>
