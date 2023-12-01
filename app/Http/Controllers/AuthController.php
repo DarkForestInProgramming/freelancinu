@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegistrationRequest;
+use Illuminate\Support\Str;
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
@@ -16,6 +16,7 @@ class AuthController extends Controller
     public function registerForm(RegistrationRequest $req) {
         $incomingFields = $req->validated();
         $incomingFields['password'] = bcrypt($incomingFields['password']);
+        $incomingFields['slug'] = Str::slug($incomingFields['username']);
 
         $user = User::create($incomingFields);
         auth()->login($user);

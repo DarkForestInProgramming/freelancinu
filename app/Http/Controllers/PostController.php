@@ -23,6 +23,7 @@ class PostController extends Controller
             $validatedData['title'] = strip_tags($validatedData['title']);
             $validatedData['body'] = strip_tags($validatedData['body']);
             $validatedData['user_id'] = auth()->id();
+            $slug = Str::slug($validatedData['title']);
         
             $postData = [
                 'title' => $validatedData['title'],
@@ -31,11 +32,12 @@ class PostController extends Controller
                 'category_id' => $validatedData['category_id'],
                 'subcategory_id' => $validatedData['subcategory_id'] ?? null,
                 'subsubcategory_id' => $validatedData['subsubcategory_id'] ?? null,
+                'slug' => $slug, 
             ];
         
             $newPost = Post::create($postData);
         
-            return redirect("/post/{$newPost->id}")->with('success', 'Naujas įrašas sėkmingai sukurtas!');
+            return redirect("/topic/{$newPost->slug}")->with('success', 'Naujas įrašas sėkmingai sukurtas!');
 
         }
     }
@@ -51,7 +53,7 @@ class PostController extends Controller
 
     public function deletePost(Post $post) {
         $post->delete();
-        return redirect('/profile/' . auth()->user()->username)->with('success', 'Įrašas sėkmingai pašalintas.');
+        return redirect('/profile/' . auth()->user()->slug)->with('success', 'Įrašas sėkmingai pašalintas.');
     }
 
     public function editPostPage(Post $post) {

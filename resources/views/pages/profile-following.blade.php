@@ -1,4 +1,4 @@
-<x-profile :sharedData="$sharedData" docTitle="Ką Seka {{$sharedData['username']}}">
+<x-profile.profile :sharedData="$sharedData" docTitle="Ką Seka {{$sharedData['username']}}">
     <div class="w-full">
         <h3 class="font-medium text-gray-900 text-left px-6">Sekama:</h3>
         <div class="mt-5 w-full flex flex-col items-center overflow-hidden text-sm">
@@ -15,4 +15,4 @@
             @endif           
         </div>
     </div>
-</x-profile>
+</x-profile.profile>

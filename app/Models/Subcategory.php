@@ -14,6 +14,10 @@ class Subcategory extends Model
         return $this->hasMany(Subsubcategory::class);
     }
 
+    public function posts() {
+        return $this->hasMany(Post::class);
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);

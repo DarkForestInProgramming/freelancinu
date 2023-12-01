@@ -29,16 +29,17 @@ Route::fallback(function () {
 
 //@desc Public routes
 
-Route::get('/', function() {
-    return view('pages.home');
-})->name('home');
+// Route::get('/', function() {
+//     return view('pages.home');
+// })->name('home');
+Route::get('/', [CategoryController::class, 'getCategories'])->name('home');
 
 Route::get('/get-subcategories/{category}', [CategoryController::class, 'getSubcategories']);
 Route::get('/get-subsubcategories/{subcategory}', [CategoryController::class, 'getSubsubcategories']);
-Route::get('/post/{post}', [PostController::class, 'singlePostPage']);
-Route::get('/profile/{user:username}', [ProfileController::class, 'profilePage']);
+Route::get("/topic/{post:slug}", [PostController::class, 'singlePostPage']);
+Route::get('/profile/{user:slug}', [ProfileController::class, 'profilePage']);
 
-//@desc Email related rooutes
+//@desc Email related rootes
 
 Route::middleware(['signed'])->group(function () {
     Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $req) {
@@ -66,11 +67,11 @@ Route::post('/logout', [AuthController::class, 'logoutForm'])->middleware('auth'
 // Post related routes
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/create-post', [PostController::class, 'createPostPage']);
-    Route::post('/create-post', [PostController::class, 'storeNewPost']);
-    Route::delete('/post/{post}', [PostController::class, 'deletePost'])->middleware('can:delete,post');
-    Route::get('/post/{post}/edit', [PostController::class, 'editPostPage'])->middleware('can:update,post');
-    Route::put('/post/{post}', [PostController::class, 'updatePost'])->middleware('can:update,post');
+    Route::get('/create-topic', [PostController::class, 'createPostPage']);
+    Route::post('/create-topic', [PostController::class, 'storeNewPost']);
+    Route::delete('/topic/{post}', [PostController::class, 'deletePost'])->middleware('can:delete,post');
+    Route::get('/topic/{post:slug}/edit', [PostController::class, 'editPostPage'])->middleware('can:update,post');
+    Route::put('/topic/{post}', [PostController::class, 'updatePost'])->middleware('can:update,post');
     Route::get('/search/{term}', [PostController::class, 'search']);
 });
 
@@ -79,14 +80,21 @@ Route::middleware(['auth', 'verified'])->group(function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/change-avatar', [ProfileController::class, 'avatarPage']);
     Route::post('/change-avatar', [ProfileController::class, 'changeAvatar']);
-    Route::get('/profile/{user:username}/followers', [ProfileController::class, 'profileFollowers']);
-    Route::get('/profile/{user:username}/following', [ProfileController::class, 'profileFollowing']);
-    Route::post('/create-follow/{user:username}', [FollowController::class, 'createFollow']);
-    Route::delete('/remove-follow/{user:username}', [FollowController::class, 'removeFollow']);
+    Route::get('/profile/{user:slug}/followers', [ProfileController::class, 'profileFollowers']);
+    Route::get('/profile/{user:slug}/following', [ProfileController::class, 'profileFollowing']);
+    Route::post('/create-follow/{user:slug}', [FollowController::class, 'createFollow']);
+    Route::delete('/remove-follow/{user:slug}', [FollowController::class, 'removeFollow']);
 });
 
 // Chat related routes
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/send-chat-message', [ChatController::class, 'chat']);
 });
+
+// Category related routes
+
+Route::get('/category/{category:slug}', [CategoryController::class, 'showCategory']);
+Route::get('/subcategory/{subcategory:slug}', [CategoryController::class, 'showSubcategory']);
+Route::get('/subsubcategory/{subsubcategory:slug}', [CategoryController::class, 'showSubsubcategory']);
+
 

@@ -79,8 +79,8 @@ export default class Search {
       ${posts
           .map((post) => {
               let postDate = new Date(post.created_at);
-              return `<a href="/post/${
-                  post.id
+              return `<a href="/topic/${
+                  post.slug
               }" class="w-full border-b border-gray-500 text-gray-600 hover:bg-gray-300 py-4 pl-6 pr-3 block">
         <img class="rounded-full h-6 shadow-md inline-block mr-2" src="${
             post.user.avatar

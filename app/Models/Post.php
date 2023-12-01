@@ -17,6 +17,7 @@ class Post extends Model
         'category_id',
         'subcategory_id',
         'subsubcategory_id',
+        'slug',
     ];
 
     

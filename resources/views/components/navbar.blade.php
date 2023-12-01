@@ -5,22 +5,20 @@
     </a>
 
     <ul class="flex space-x-6 mr-6 text-lg">
-
         @auth
-
         <a href="#" class="text-black header-search-icon" title="Paieška" data-placement="bottom">
             <i class="fas fa-search"></i>
         </a>
-
+        
         <a href="#" class="text-black header-chat-icon" title="Pokalbis" data-placement="bottom">
             <i class="fas fa-comment"></i>
         </a>
 
-            <a href="/profile/{{auth()->user()->username}}">
+            <a href="/profile/{{auth()->user()->slug}}">
                 <img title="Mano Paskyra" data-placement="bottom" style="width: 32px; height: 32px; border-radius: 50%;" src="{{auth()->user()->avatar}}" />
             </a>
 
-            <a class="hover:text-laravel" title="Įrašo kūrimas" href="/create-post">
+            <a class="hover:text-laravel" title="Įrašo kūrimas" href="/create-topic">
                 <i class="fa-sharp fa-solid fa-pen"></i> 
             </a>
 

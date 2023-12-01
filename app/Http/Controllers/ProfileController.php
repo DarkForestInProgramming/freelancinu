@@ -16,7 +16,7 @@ class ProfileController extends Controller
         if (auth()->check()) {
             $currentlyFollowing = Follow::where([['user_id', '=', auth()->user()->id], ['followeduser', '=', $user->id]])->count();
         }
-        View::share('sharedData', ['currentlyFollowing' => $currentlyFollowing, 'username' => $user->username, 'role' => $user->role, 'avatar' => $user->avatar, 'postCount' => $user->posts()->count(), 'followerCount' => $user->followers()->count(), 'followingCount' => $user->followingTheseUsers()->count()]);
+        View::share('sharedData', ['currentlyFollowing' => $currentlyFollowing, 'username' => $user->username, 'slug' => $user->slug, 'role' => $user->role, 'avatar' => $user->avatar, 'postCount' => $user->posts()->count(), 'followerCount' => $user->followers()->count(), 'followingCount' => $user->followingTheseUsers()->count()]);
     }
     public function profilePage(User $user) {
         $this->getSharedData($user);
@@ -42,6 +42,7 @@ class ProfileController extends Controller
         Storage::delete(str_replace("/storage/", "public/", $oldAvatar));
         return back()->with('success', 'Profilio nuotrauka pakeista! Dabar galite pasirodyti sukurdami naują įrašą.');
     }
+    return back()->with('success', 'Profilio nuotrauka pakeista! Dabar galite pasirodyti sukurdami naują įrašą.');
     }
     public function profileFollowers(User $user) {
         $this->getSharedData($user);
