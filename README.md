@@ -1,66 +1,150 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+    <img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701456093/Freelancinu/freelancinu_logo.png" alt="Logo">
+  <h3 align="center">"Freelancinu" Forum For Freelancers</h3>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+</div>
 
-## About Laravel
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<!-- ABOUT THE PROJECT -->
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## About The Project
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Freelancinu is a forum-based application designed for freelance workers to share their experiences and connect with like-minded individuals. The forum provides the ability to create topics within categories, subcategories, and sub-subcategories. Users can follow other members, perform live searches, and engage in real-time commenting within the general conversation channel. The essence of the project is to learn the Laravel framework, the PHP programming language, and working with the MySQL database.
 
-## Learning Laravel
+Pictures of the project:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701533260/Freelancinu/app_imgs/n5jzmvt82wybzlrujyil.png" width="1190"/>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+<img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701533371/Freelancinu/app_imgs/czapnkdth5hp7gztggww.png" width="1190"/>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701533411/Freelancinu/app_imgs/oa8evyiv7i5kmoured6f.png" width="1190"/>
 
-## Laravel Sponsors
+<img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701533460/Freelancinu/app_imgs/vkwu8cqbxbvapcnl2iap.png" width="1190"/>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+<img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701533883/Freelancinu/app_imgs/ypqqfwxdcmkkmanzjvzi.png" width="1190"/>
 
-### Premium Partners
+<img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701533910/Freelancinu/app_imgs/b33lumozsmzsxkhnvxku.png" width="1190"/>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+<img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701534399/Freelancinu/app_imgs/bvq7ddjfu2sdiina5hsh.png" width="1190"/>
 
-## Contributing
+<img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701534047/Freelancinu/app_imgs/bz3haj3g2zggn0nicwrd.png" width="1190"/>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701534114/Freelancinu/app_imgs/orxx7z4zdk4kqq6w85jc.png" width="1190"/>
 
-## Code of Conduct
+<img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701534525/Freelancinu/app_imgs/tilmoxrq6edye512suhk.png" width="1190"/>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+<img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701534517/Freelancinu/app_imgs/j1z5i0j8eyzzcjbtmylp.png" width="1190"/>
 
-## Security Vulnerabilities
+<img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701534617/Freelancinu/app_imgs/pjenuetx1pjtywsei5xg.png" width="1190"/>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701534667/Freelancinu/app_imgs/vowfzkdsflnv0iqzsupo.png" width="1190"/>
 
-## License
+<img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701534747/Freelancinu/app_imgs/pgxpgcyydgltujy9a2vv.png" width="1190"/>
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701534824/Freelancinu/app_imgs/ebkzyslpra4zhusqondx.png" width="1190"/>
+
+<img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701534853/Freelancinu/app_imgs/kdtkqgmgbcfmmrmg7g9d.png" width="1190"/>
+
+<img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701534874/Freelancinu/app_imgs/cxumafdeazvj7t1j0cw3.png" width="1190"/>
+
+<img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701534893/Freelancinu/app_imgs/ukpkvlenqqmvspvgxwiu.png" width="1190"/>
+
+### Few mobile pictures:
+<div align="center">
+<img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701533196/Freelancinu/app_imgs/mobile/kjlw5ry9zfzlmgk7buon.png" width="375" height="667" />
+
+<img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701533197/Freelancinu/app_imgs/mobile/cxehjcanax92edjets6u.png" width="375" height="667" />
+
+<img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701535582/Freelancinu/app_imgs/mobile/eyy3jqkaoretzxlaphnu.png" width="375" height="667" />
+
+<img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701533197/Freelancinu/app_imgs/mobile/fhddlpwjrc6ozffxxr21.png" width="375" height="667" />
+
+<img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701533197/Freelancinu/app_imgs/mobile/f7sle9jabuaxpgmrvtrp.png" width="375" height="667" />
+
+<img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701533197/Freelancinu/app_imgs/mobile/ryrrahwc4a1p7jftuzeo.png" width="375" height="667" />
+</div>
+
+### Built With
+
+Used frameworks, libraries, and database in this project:
+
+### Used technologies:
+
+- Laravel
+
+- Tailwind CSS
+
+- MySQL
+
+<!-- GETTING STARTED -->
+
+## Getting Started
+
+This is an instruction on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+Install the latest npm.
+
+- npm
+  ```sh
+  npm i npm@latest -g
+  ```
+
+### Installation
+
+_Below are instructions on how you need to start the project._
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/DarkForestInProgramming/freelancinu.git
+   ```
+2. Install packages
+   ```sh
+   composer install
+   npm i
+   ```
+3. Add environment variables
+
+   ```
+   In the .env file add your database, mailer data, pusher data, broadcast, scout drivers.
+   ```
+
+4. Start project
+
+   ```
+   npm run dev
+   php artisan serve
+   ```
+
+<!-- CONTACT -->
+
+## Contact
+
+Šipelis, D. - [@Linkedin](https://www.linkedin.com/in/deividas-%C5%A1ipelis-15a070212/) - sipelis.d@gmail.com
+
+Project Link: [https://github.com/DarkForestInProgramming/freelancinu-forum](https://github.com/DarkForestInProgramming/freelancinu-forum)
+
