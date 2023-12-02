@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreatePostRequest;
 use App\Models\Category;
-use App\Models\Comment;
 use App\Models\Follow;
 use App\Models\Post;
 use Illuminate\Support\Str;
@@ -42,23 +41,27 @@ class PostController extends Controller
         }
     }
 
-    public function singlePostPage(Post $post, Comment $comment) {
+    public function singlePostPage(Post $post) {
         $currentlyFollowing = 0;
         $commentsCount = $post->comments()->count();
+        $user = auth()->user();
         
-        if (auth()->check()) {
+        if (auth()->check() && $user) {
             $currentlyFollowing = Follow::where([
-                ['user_id', '=', auth()->user()->id],
-                ['followeduser', '=', $post->user->id || $comment->user->id]
+                ['user_id', '=', $user->id],
+                ['followeduser', '=', $post->user->id]
             ])->count();
         }
-    
+        
         $post['body'] = strip_tags(Str::markdown($post->body), '<p><ul><ol><li><strong><em><h3><br>');
-        $user = auth()->user();
-        $currentUserComment = $post->comments->first(function ($comment) use ($user) {
-            return $comment->user_id === $user->id;
-        });
-    
+        
+        $currentUserComment = null;
+        if ($user) {
+            $currentUserComment = $post->comments->first(function ($comment) use ($user) {
+                return $comment->user_id === $user->id;
+            });
+        }
+        
         return view('pages.single-post', [
             'post' => $post,
             'currentlyFollowing' => $currentlyFollowing,

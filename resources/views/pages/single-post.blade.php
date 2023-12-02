@@ -13,9 +13,11 @@
             <span class="text-sm font-thin">({{$commentsCount}})</span>
         @endif
         </h2>
+        @auth
         @if ($post->user->id !== auth()->user()->id && !$currentUserComment)
             <x-post.write-comment :post="$post" />
         @endif
+        @endauth
         @foreach ($post->comments as $comment)
             <div class="mx-auto p-6 border-t sm:flex items-start">
                 <x-post.comment-user :post="$post" :comment="$comment" :currentlyFollowing="$currentlyFollowing" />
