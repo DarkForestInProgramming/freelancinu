@@ -2,7 +2,6 @@
 <br />
 <div align="center">
     <img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701456093/Freelancinu/freelancinu_logo.png" alt="Logo">
-
   <h3 align="center">"Freelancinu" Forum For Freelancers</h3>
 
 </div>
@@ -15,6 +14,13 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
     <li><a href="#contact">Contact</a></li>
@@ -66,7 +72,7 @@ Pictures of the project:
 <img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701534893/Freelancinu/app_imgs/ukpkvlenqqmvspvgxwiu.png" width="1190"/>
 
 ### Few mobile pictures:
-
+<div align="center">
 <img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701533196/Freelancinu/app_imgs/mobile/kjlw5ry9zfzlmgk7buon.png" width="375" height="667" />
 
 <img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701533197/Freelancinu/app_imgs/mobile/cxehjcanax92edjets6u.png" width="375" height="667" />
@@ -78,6 +84,7 @@ Pictures of the project:
 <img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701533197/Freelancinu/app_imgs/mobile/f7sle9jabuaxpgmrvtrp.png" width="375" height="667" />
 
 <img src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701533197/Freelancinu/app_imgs/mobile/ryrrahwc4a1p7jftuzeo.png" width="375" height="667" />
+</div>
 
 ### Built With
 
@@ -90,6 +97,48 @@ Used frameworks, libraries, and database in this project:
 - Tailwind CSS
 
 - MySQL
+
+<!-- GETTING STARTED -->
+
+## Getting Started
+
+This is an instruction on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+Install the latest npm.
+
+- npm
+  ```sh
+  npm i npm@latest -g
+  ```
+
+### Installation
+
+_Below are instructions on how you need to start the project._
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/DarkForestInProgramming/freelancinu.git
+   ```
+2. Install packages
+   ```sh
+   composer install
+   npm i
+   ```
+3. Add environment variables
+
+   ```
+   In the .env file add your database, mailer data, pusher data, broadcast, scout drivers.
+   ```
+
+4. Start project
+
+   ```
+   npm run dev
+   php artisan serve
+   ```
 
 <!-- CONTACT -->
 
