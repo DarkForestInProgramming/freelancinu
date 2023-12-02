@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\FollowController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
@@ -29,9 +30,6 @@ Route::fallback(function () {
 
 //@desc Public routes
 
-// Route::get('/', function() {
-//     return view('pages.home');
-// })->name('home');
 Route::get('/', [CategoryController::class, 'getCategories'])->name('home');
 
 Route::get('/get-subcategories/{category}', [CategoryController::class, 'getSubcategories']);
@@ -97,4 +95,9 @@ Route::get('/category/{category:slug}', [CategoryController::class, 'showCategor
 Route::get('/subcategory/{subcategory:slug}', [CategoryController::class, 'showSubcategory']);
 Route::get('/subsubcategory/{subsubcategory:slug}', [CategoryController::class, 'showSubsubcategory']);
 
+// Comments related routes
+Route::middleware(['auth', 'verified'])->group(function () {
+Route::post('/create-comment', [CommentController::class, 'storeComment']);
+Route::delete('/comment/{comment}', [CommentController::class, 'deleteComment']);
+});
 

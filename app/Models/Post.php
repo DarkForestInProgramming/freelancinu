@@ -42,6 +42,10 @@ class Post extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
+    public function comments() {
+        return $this->hasMany(Comment::class, 'post_id');
+    }
+
     public function toSearchableArray() {
         return [
             'title' => $this->title,

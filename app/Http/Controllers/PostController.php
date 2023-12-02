@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreatePostRequest;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Follow;
 use App\Models\Post;
 use Illuminate\Support\Str;
@@ -19,7 +20,6 @@ class PostController extends Controller
     {
         {
             $validatedData = $request->validated();
-    
             $validatedData['title'] = strip_tags($validatedData['title']);
             $validatedData['body'] = strip_tags($validatedData['body']);
             $validatedData['user_id'] = auth()->id();
@@ -42,13 +42,29 @@ class PostController extends Controller
         }
     }
 
-    public function singlePostPage(Post $post) {
+    public function singlePostPage(Post $post, Comment $comment) {
         $currentlyFollowing = 0;
+        $commentsCount = $post->comments()->count();
+        
         if (auth()->check()) {
-            $currentlyFollowing = Follow::where([['user_id', '=', auth()->user()->id], ['followeduser', '=', $post->user->id]])->count();
+            $currentlyFollowing = Follow::where([
+                ['user_id', '=', auth()->user()->id],
+                ['followeduser', '=', $post->user->id || $comment->user->id]
+            ])->count();
         }
+    
         $post['body'] = strip_tags(Str::markdown($post->body), '<p><ul><ol><li><strong><em><h3><br>');
-        return view('pages.single-post', ['post' => $post, 'currentlyFollowing' => $currentlyFollowing]);
+        $user = auth()->user();
+        $currentUserComment = $post->comments->first(function ($comment) use ($user) {
+            return $comment->user_id === $user->id;
+        });
+    
+        return view('pages.single-post', [
+            'post' => $post,
+            'currentlyFollowing' => $currentlyFollowing,
+            'currentUserComment' => $currentUserComment,
+            'commentsCount' => $commentsCount,
+        ]);
     }
 
     public function deletePost(Post $post) {
