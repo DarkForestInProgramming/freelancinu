@@ -16,7 +16,7 @@
                     @endif
                     @endauth
                 <h1 class="font-bold text-center text-3xl text-gray-900">{{$sharedData['username']}}</h1>
-                <button class="bg-laravel/80 text-center text-white font-thin py-1 px-8 mt-2 mb-4 rounded">{{$sharedData['role']}}</button>
+                <button class="bg-laravel/80 text-center text-white font-thin py-1 px-8 mt-2 mb-4 rounded cursor-no-drop">{{$sharedData['role']}}</button>
             </div>
             
                 <div class="flex items-end justify-end my-4 px-6">

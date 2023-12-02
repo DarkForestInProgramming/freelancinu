@@ -1,5 +1,5 @@
 <x-layout docTitle='Paskyros Patvirtinimas'>
-<div class="flex justify-center items-center py-10>
+<div class="flex justify-center items-center py-10">
     <div class="bg-white p-6 rounded-lg shadow-md">
         @if(auth()->user() && auth()->user()->hasVerifiedEmail())
             <h2 class="text-2xl font-bold mb-4">Jūsų El. Paštas Patvirtintas</h2>
