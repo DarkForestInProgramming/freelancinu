@@ -1,5 +1,5 @@
 <x-layout :docTitle="$subcategory->name">
-    <div class="py-4 mb-48">
+    <div class="py-10 mb-48">
             <div class="w-11/12 lg:w-3/4 mx-auto bg-white overflow-hidden rounded-md shadow-md p-6 mb-6">
                 <x-subcategory.breadcrumb :subcategory="$subcategory"/>
                 <h1 class="text-2xl md:text-4xl font-bold mb-4 border-b p-3">{{$subcategory->category->name}} / {{$subcategory->name}}</h1>

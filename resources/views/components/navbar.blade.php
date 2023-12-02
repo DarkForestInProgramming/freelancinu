@@ -1,7 +1,7 @@
-<nav class="flex justify-between items-center w-full mb-4">
+<nav class="flex justify-between items-center shadow-lg h-24 w-full">
 
     <a href="/">
-        <img class="w-24" src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701456093/Freelancinu/freelancinu_logo.png" alt="Freelancinu" />
+        <img class="w-20 ml-2 rounded-md" src="https://res.cloudinary.com/dp0m5mp1s/image/upload/v1701456093/Freelancinu/freelancinu_logo.png" alt="Freelancinu" />
     </a>
 
     <ul class="flex space-x-6 mr-6 text-lg">

@@ -1,12 +1,16 @@
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 md:px-0 mb-48">
     @foreach ($categories as $category)
-        <div class="bg-white border border-gray-200 rounded p-4 shadow-md">
-            <a href="/category/{{$category->slug}}">
-                <img class="w-full rounded-lg mb-4 md:mb-0 md:h-48 hover:scale-105 transition duration-500 object-cover" src="{{$category->image}}" alt="{{$category->title}}" />
-            </a>
+        <div class="bg-white border border-gray-200 rounded p-4 shadow-md relative mx-auto">
+            <div class="flex justify-center">
+                <a href="/category/{{$category->slug}}" title="Kategorija: {{$category->slug}}">
+                    <div class="rounded-full w-32 h-32 md:w-44 md:h-44 shadow-md border-4 border-white transition duration-200 transform hover:scale-110 flex items-center justify-center">
+                    <img class="w-full h-full object-cover rounded-full" src="{{$category->image}}" alt="{{$category->title}}" />
+                </div>
+                </a>
+            </div>
             <div class="mt-4">
                 <h3 class="text-xl md:text-2xl font-semibold">
-                    <a href="/category/{{$category->slug}}">{{$category->name}}</a>
+                    <a href="/category/{{$category->slug}}" title="Kategorija: {{$category->slug}}">{{$category->name}}</a>
                 </h3>
                 <ul class="flex flex-wrap mt-2">
                     @foreach ($category->subcategories as $subcategory)
@@ -15,7 +19,7 @@
                         </li>
                     @endforeach
                 </ul>
-                <p class="text-sm text-gray-400 mt-2">{{$category->description}}</p>
+                <p class="text-sm text-gray-500 mt-2">{{$category->description}}</p>
                 @foreach($category->posts->sortByDesc('created_at')->take(1) as $post)
                     <div class="flex items-center mt-4">
                         <span class="text-xs font-light text-laravel mr-2">Nauja</span>

@@ -1,11 +1,13 @@
 <div class="w-full lg:w-1/4 p-6 text-center border-b md:border-none">
-    <a href="/profile/{{$post->user->slug}}">
-    <h1 class="text-2xl font-bold mb-2">{{$post->user->username}}</h1>
+    <a href="/profile/{{$post->user->slug}}" title="Narys: {{$post->user->username}}">
+    <h1 class="text-lg font-bold mb-4">{{$post->user->username}}</h1>
 </a>
-    <div class="flex items-center justify-center w-24 h-24 rounded-full shadow-md mb-4 mx-auto">
-        <img src="{{$post->user->avatar}}" alt="{{$post->user->username}}" class="w-24 h-24 rounded-full">
+    <div class="flex items-center justify-center w-28 h-28 rounded-md shadow-md mb-4 mx-auto">
+        <a href="/profile/{{$post->user->slug}}" title="Narys: {{$post->user->username}}">
+        <img src="{{$post->user->avatar}}" alt="{{$post->user->username}}" class="w-28 h-28 rounded-md">
+    </a>
     </div>
-    <button class="bg-laravel/80 text-center text-white font-thin py-1 px-8 mb-2 rounded">{{$post->user->role}}</button>
+    <button class="bg-laravel/80 text-center text-white font-thin py-1 px-8 mb-2 rounded-sm cursor-no-drop">{{$post->user->role}}</button>
     <div class="flex items-center justify-center text-gray-500 text-sm">
         <span>Prisijungė: {{$post->user->created_at->format('Y-m-d')}}</span>
     </div>
