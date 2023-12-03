@@ -31,7 +31,6 @@ Route::fallback(function () {
 //@desc Public routes
 
 Route::get('/', [CategoryController::class, 'getCategories'])->name('home');
-
 Route::get('/get-subcategories/{category}', [CategoryController::class, 'getSubcategories']);
 Route::get('/get-subsubcategories/{subcategory}', [CategoryController::class, 'getSubsubcategories']);
 Route::get("/topic/{post:slug}", [PostController::class, 'singlePostPage']);

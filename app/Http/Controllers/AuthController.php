@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegistrationRequest;
-use Illuminate\Support\Str;
-use App\Models\User;
+use App\Services\LoginService;
+use App\Services\RegistrationService;
 
 class AuthController extends Controller
 {
@@ -13,14 +13,11 @@ class AuthController extends Controller
         return view('pages.register');
     }
 
-    public function registerForm(RegistrationRequest $req) {
+    public function registerForm(RegistrationRequest $req, RegistrationService $registrationService) {
         $incomingFields = $req->validated();
-        $incomingFields['password'] = bcrypt($incomingFields['password']);
-        $incomingFields['slug'] = Str::slug($incomingFields['username']);
-
-        $user = User::create($incomingFields);
+        $user = $registrationService->registerUser($incomingFields);
         auth()->login($user);
-        $user->sendEmailVerificationNotification();
+
         return redirect('/verify');
     }
 
@@ -28,12 +25,13 @@ class AuthController extends Controller
         return view('pages.login');
     }
 
-    public function loginForm(LoginRequest $req) {
+    public function loginForm(LoginRequest $req, LoginService $loginService)
+    {
         $credentials = $req->only('email', 'password');
-
-        if (auth()->attempt($credentials)) {
-            $req->session()->regenerate();
-            return redirect('/')->with('success', "Sveiki sugrįžę, " . auth()->user()->username);
+        $message = $loginService->login($credentials);
+        
+        if ($message) {
+            return redirect('/')->with('success', $message);
         } else {
             return redirect('/login')->with('error', 'Vartotojo el. paštas arba slaptažodis yra neteisingi.');
         }
@@ -41,6 +39,7 @@ class AuthController extends Controller
 
     public function logoutForm() {
         auth()->logout();
+        
         return redirect('/')->with('success', 'Sėkmingai atsijungėte.');
     }
 }

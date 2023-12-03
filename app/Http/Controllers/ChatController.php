@@ -13,6 +13,7 @@ class ChatController extends Controller
             return response()->noContent();
         }
         broadcast(new ChatMessage(['username' => auth()->user()->username, 'textvalue' => strip_tags($req->textvalue), 'avatar' => auth()->user()->avatar]))->toOthers();
+        
         return response()->noContent();
     }
 }
